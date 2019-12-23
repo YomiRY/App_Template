@@ -12,6 +12,11 @@ class SlideMenuNavViewController: SideMenuNavigationController {
         super.init(rootViewController: menuVc)
     }
     
+    // TODO: 務必要加
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

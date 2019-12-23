@@ -24,7 +24,6 @@ class MainViewController:UIViewController  {
     
     override func viewDidLayoutSubviews() {
         print(#function)
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -45,20 +44,22 @@ class MainViewController:UIViewController  {
         initSlideMenu()
     }
     func initSlideMenu() {
-        let style = SideMenuPresentationStyle()
-        style.backgroundColor = UIColor.white
-        style.onTopShadowOpacity = 0.7
+        var style = SideMenuPresentationStyle()
+        style = .viewSlideOutMenuIn
+        style.backgroundColor = .clear
+        style.onTopShadowOpacity = 0.5
+        style.onTopShadowRadius = 5
+        style.onTopShadowColor = .black
+        style.menuOnTop = true
                 
         var settings = SideMenuSettings()
         settings.presentationStyle = style
-        
-        let slideMenuNavViewController = SlideMenuNavViewController()
-        slideMenuNavViewController.settings = settings
-        SideMenuManager.default.leftMenuNavigationController = slideMenuNavViewController
+    
+        SideMenuManager.default.leftMenuNavigationController = SlideMenuNavViewController()
+        SideMenuManager.default.leftMenuNavigationController?.settings = settings
         // (Optional) Prevent status bar area from turning black when menu appears:
         SideMenuManager.default.leftMenuNavigationController?.statusBarEndAlpha = 0
         SideMenuManager.default.leftMenuNavigationController?.navigationBar.isHidden = true
-        SideMenuManager.default.leftMenuNavigationController?.presentationStyle = .menuSlideIn
         SideMenuManager.default.leftMenuNavigationController?.menuWidth = UIScreen.main.bounds.width * 0.66
         // Setup gestures: the left and/or right menus must be set up (above) for these to work.
         // Note that these continue to work on the Navigation Controller independent of t

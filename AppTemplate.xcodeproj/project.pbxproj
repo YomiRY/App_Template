@@ -13,6 +13,7 @@
 		ED1E07FA23AC9656003E53D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED1E07F823AC9656003E53D8 /* Main.storyboard */; };
 		ED1E07FC23AC965A003E53D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED1E07FB23AC965A003E53D8 /* Assets.xcassets */; };
 		ED1E07FF23AC965A003E53D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED1E07FD23AC965A003E53D8 /* LaunchScreen.storyboard */; };
+		ED69B83D23B1294700488740 /* hilife_app_splash.png in Resources */ = {isa = PBXBuildFile; fileRef = ED69B83C23B1294700488740 /* hilife_app_splash.png */; };
 		EDED332523ACB1BF005F658D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDED332423ACB1BF005F658D /* MainViewController.swift */; };
 		EDED332B23ACB7F8005F658D /* SlideMenuNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDED332A23ACB7F8005F658D /* SlideMenuNavViewController.swift */; };
 		EDED332D23ACBD97005F658D /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDED332C23ACBD97005F658D /* Menu.storyboard */; };
@@ -31,6 +32,7 @@
 		ED1E07FB23AC965A003E53D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ED1E07FE23AC965A003E53D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED1E080023AC965A003E53D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED69B83C23B1294700488740 /* hilife_app_splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hilife_app_splash.png; sourceTree = "<group>"; };
 		EDED332423ACB1BF005F658D /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		EDED332A23ACB7F8005F658D /* SlideMenuNavViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideMenuNavViewController.swift; sourceTree = "<group>"; };
 		EDED332C23ACBD97005F658D /* Menu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 		ED1E07F123AC9656003E53D8 /* AppTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				ED69B83B23B1293A00488740 /* images */,
 				EDED332623ACB242005F658D /* ViewController */,
 				ED1E07F223AC9656003E53D8 /* AppDelegate.swift */,
 				ED1E07F423AC9656003E53D8 /* SceneDelegate.swift */,
@@ -99,6 +102,14 @@
 				ED1E080023AC965A003E53D8 /* Info.plist */,
 			);
 			path = AppTemplate;
+			sourceTree = "<group>";
+		};
+		ED69B83B23B1293A00488740 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				ED69B83C23B1294700488740 /* hilife_app_splash.png */,
+			);
+			path = images;
 			sourceTree = "<group>";
 		};
 		EDED332623ACB242005F658D /* ViewController */ = {
@@ -183,6 +194,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED1E07FF23AC965A003E53D8 /* LaunchScreen.storyboard in Resources */,
+				ED69B83D23B1294700488740 /* hilife_app_splash.png in Resources */,
 				ED1E07FC23AC965A003E53D8 /* Assets.xcassets in Resources */,
 				EDED333323ACD574005F658D /* SlideMenuItemCell.xib in Resources */,
 				ED1E07FA23AC9656003E53D8 /* Main.storyboard in Resources */,
