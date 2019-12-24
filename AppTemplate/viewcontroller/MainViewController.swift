@@ -16,9 +16,12 @@ class MainViewController:UIViewController  {
     @IBOutlet weak var mBiSlideMenuBtn: UIBarButtonItem!
     @IBOutlet weak var mNavBar: UINavigationBar!
     
+    private var mLeftMenuItemList:Array<LeftMenuItem>?
+    
     // MARK:- Life Cycle
     override func viewDidLoad() {
         print(#function)
+        initData()
         initView()
     }
     
@@ -26,8 +29,26 @@ class MainViewController:UIViewController  {
         print(#function)
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {}
+    
+    // MARK:- Initialization
+    func initData() {
+        self.mLeftMenuItemList = Array<LeftMenuItem>()
         
+        for item in Constants.LEFT_MENU_ITEMS {
+            self.mLeftMenuItemList?.append(item)
+            
+            if item.isMainItem, let subItems = item.subItems {
+                for subItem in subItems {
+                    self.mLeftMenuItemList?.append(subItem)
+                }
+            }
+        }
+    }
+    
+    func initView() {
+        mNavBar.barTintColor = UIColor.white
+        initSlideMenu()
     }
     
     // MARK:- SlideMenu
@@ -39,10 +60,6 @@ class MainViewController:UIViewController  {
         present(menuVc, animated: true, completion: nil)
     }
     
-    func initView() {
-        mNavBar.barTintColor = UIColor.white
-        initSlideMenu()
-    }
     func initSlideMenu() {
         var style = SideMenuPresentationStyle()
         style = .viewSlideOutMenuIn
@@ -55,7 +72,7 @@ class MainViewController:UIViewController  {
         var settings = SideMenuSettings()
         settings.presentationStyle = style
     
-        SideMenuManager.default.leftMenuNavigationController = SlideMenuNavViewController()
+        SideMenuManager.default.leftMenuNavigationController = SlideMenuNavViewController(menuItemList: self.mLeftMenuItemList)
         SideMenuManager.default.leftMenuNavigationController?.settings = settings
         // (Optional) Prevent status bar area from turning black when menu appears:
         SideMenuManager.default.leftMenuNavigationController?.statusBarEndAlpha = 0

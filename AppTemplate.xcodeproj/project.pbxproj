@@ -14,11 +14,13 @@
 		ED1E07FC23AC965A003E53D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED1E07FB23AC965A003E53D8 /* Assets.xcassets */; };
 		ED1E07FF23AC965A003E53D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED1E07FD23AC965A003E53D8 /* LaunchScreen.storyboard */; };
 		ED69B83D23B1294700488740 /* hilife_app_splash.png in Resources */ = {isa = PBXBuildFile; fileRef = ED69B83C23B1294700488740 /* hilife_app_splash.png */; };
+		ED69B84123B1A3D500488740 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED69B84023B1A3D500488740 /* Constants.swift */; };
+		ED69B84323B1A46F00488740 /* LeftMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED69B84223B1A46F00488740 /* LeftMenuItem.swift */; };
+		EDBC100823B1F835006A39B1 /* SlideMenuItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBC100723B1F835006A39B1 /* SlideMenuItemCell.swift */; };
 		EDED332523ACB1BF005F658D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDED332423ACB1BF005F658D /* MainViewController.swift */; };
 		EDED332B23ACB7F8005F658D /* SlideMenuNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDED332A23ACB7F8005F658D /* SlideMenuNavViewController.swift */; };
 		EDED332D23ACBD97005F658D /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDED332C23ACBD97005F658D /* Menu.storyboard */; };
 		EDED332F23ACC79A005F658D /* SlideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDED332E23ACC79A005F658D /* SlideMenuViewController.swift */; };
-		EDED333223ACD574005F658D /* SlideMenuItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDED333023ACD574005F658D /* SlideMenuItemCell.swift */; };
 		EDED333323ACD574005F658D /* SlideMenuItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDED333123ACD574005F658D /* SlideMenuItemCell.xib */; };
 /* End PBXBuildFile section */
 
@@ -33,11 +35,13 @@
 		ED1E07FE23AC965A003E53D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED1E080023AC965A003E53D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ED69B83C23B1294700488740 /* hilife_app_splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hilife_app_splash.png; sourceTree = "<group>"; };
+		ED69B84023B1A3D500488740 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		ED69B84223B1A46F00488740 /* LeftMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenuItem.swift; sourceTree = "<group>"; };
+		EDBC100723B1F835006A39B1 /* SlideMenuItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideMenuItemCell.swift; sourceTree = "<group>"; };
 		EDED332423ACB1BF005F658D /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		EDED332A23ACB7F8005F658D /* SlideMenuNavViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideMenuNavViewController.swift; sourceTree = "<group>"; };
 		EDED332C23ACBD97005F658D /* Menu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
 		EDED332E23ACC79A005F658D /* SlideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideMenuViewController.swift; sourceTree = "<group>"; };
-		EDED333023ACD574005F658D /* SlideMenuItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideMenuItemCell.swift; sourceTree = "<group>"; };
 		EDED333123ACD574005F658D /* SlideMenuItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SlideMenuItemCell.xib; sourceTree = "<group>"; };
 		F7F36DF5611F37A5E8D15A5D /* Pods-AppTemplate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppTemplate.debug.xcconfig"; path = "Target Support Files/Pods-AppTemplate/Pods-AppTemplate.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -92,8 +96,11 @@
 		ED1E07F123AC9656003E53D8 /* AppTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				EDBC100623B1DFDB006A39B1 /* component */,
 				ED69B83B23B1293A00488740 /* images */,
-				EDED332623ACB242005F658D /* ViewController */,
+				ED69B83F23B1A3C900488740 /* utils */,
+				ED69B83E23B1A15300488740 /* model */,
+				EDED332623ACB242005F658D /* viewcontroller */,
 				ED1E07F223AC9656003E53D8 /* AppDelegate.swift */,
 				ED1E07F423AC9656003E53D8 /* SceneDelegate.swift */,
 				ED1E07F823AC9656003E53D8 /* Main.storyboard */,
@@ -112,13 +119,38 @@
 			path = images;
 			sourceTree = "<group>";
 		};
-		EDED332623ACB242005F658D /* ViewController */ = {
+		ED69B83E23B1A15300488740 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				ED69B84223B1A46F00488740 /* LeftMenuItem.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		ED69B83F23B1A3C900488740 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				ED69B84023B1A3D500488740 /* Constants.swift */,
+			);
+			path = utils;
+			sourceTree = "<group>";
+		};
+		EDBC100623B1DFDB006A39B1 /* component */ = {
+			isa = PBXGroup;
+			children = (
+				EDBC100723B1F835006A39B1 /* SlideMenuItemCell.swift */,
+				EDED333123ACD574005F658D /* SlideMenuItemCell.xib */,
+			);
+			path = component;
+			sourceTree = "<group>";
+		};
+		EDED332623ACB242005F658D /* viewcontroller */ = {
 			isa = PBXGroup;
 			children = (
 				EDED332723ACB788005F658D /* Menu */,
 				EDED332423ACB1BF005F658D /* MainViewController.swift */,
 			);
-			path = ViewController;
+			path = viewcontroller;
 			sourceTree = "<group>";
 		};
 		EDED332723ACB788005F658D /* Menu */ = {
@@ -127,8 +159,6 @@
 				EDED332C23ACBD97005F658D /* Menu.storyboard */,
 				EDED332A23ACB7F8005F658D /* SlideMenuNavViewController.swift */,
 				EDED332E23ACC79A005F658D /* SlideMenuViewController.swift */,
-				EDED333023ACD574005F658D /* SlideMenuItemCell.swift */,
-				EDED333123ACD574005F658D /* SlideMenuItemCell.xib */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -255,8 +285,10 @@
 				EDED332523ACB1BF005F658D /* MainViewController.swift in Sources */,
 				ED1E07F323AC9656003E53D8 /* AppDelegate.swift in Sources */,
 				EDED332B23ACB7F8005F658D /* SlideMenuNavViewController.swift in Sources */,
+				ED69B84323B1A46F00488740 /* LeftMenuItem.swift in Sources */,
+				ED69B84123B1A3D500488740 /* Constants.swift in Sources */,
 				ED1E07F523AC9656003E53D8 /* SceneDelegate.swift in Sources */,
-				EDED333223ACD574005F658D /* SlideMenuItemCell.swift in Sources */,
+				EDBC100823B1F835006A39B1 /* SlideMenuItemCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -5,10 +5,10 @@ class SlideMenuNavViewController: SideMenuNavigationController {
     private static let SLIDE_MENU_STORYBOARD_NAME = "Menu"
     private static let SLIDE_MENU_VC_STORYBOARD_ID = "slide_menu_vc"
     
-    init() {
+    init(menuItemList:Array<LeftMenuItem>?) {
         let storyBoard = UIStoryboard(name: SlideMenuNavViewController.SLIDE_MENU_STORYBOARD_NAME, bundle: nil)
-        let menuVc = storyBoard.instantiateViewController(withIdentifier: SlideMenuNavViewController.SLIDE_MENU_VC_STORYBOARD_ID)
-        
+        let menuVc = storyBoard.instantiateViewController(withIdentifier: SlideMenuNavViewController.SLIDE_MENU_VC_STORYBOARD_ID) as! SlideMenuViewController
+        menuVc.mMenuItemList = menuItemList
         super.init(rootViewController: menuVc)
     }
     
