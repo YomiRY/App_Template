@@ -6,5 +6,7 @@ target 'AppTemplate' do
   use_frameworks!
 
   pod 'SideMenu', '~> 6.0'
+  pod 'FSPagerView'
+  pod 'Kingfisher', '~> 5.0'
 
 end

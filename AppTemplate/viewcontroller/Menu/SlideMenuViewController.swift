@@ -46,7 +46,7 @@ class SlideMenuViewController: UIViewController, UITableViewDataSource, UITableV
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: SlideMenuViewController.CELL_ID) as? SlideMenuItemCell, let itemList = self.mMenuItemList else {
-            fatalError("Cell is not of kind SlideMenuItemCell")
+            fatalError("Cell is not of kind SlideMenuItemCell or itemList is nil")
         }
         let menuItem = itemList[indexPath.row]
         cell.selectionStyle = .none
@@ -62,7 +62,6 @@ class SlideMenuViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     // MARK:- UITableViewDelegate
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("\(#function)")
         self.navigationController?.dismiss(animated: true, completion: nil)

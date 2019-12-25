@@ -16,7 +16,12 @@
 		ED69B83D23B1294700488740 /* hilife_app_splash.png in Resources */ = {isa = PBXBuildFile; fileRef = ED69B83C23B1294700488740 /* hilife_app_splash.png */; };
 		ED69B84123B1A3D500488740 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED69B84023B1A3D500488740 /* Constants.swift */; };
 		ED69B84323B1A46F00488740 /* LeftMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED69B84223B1A46F00488740 /* LeftMenuItem.swift */; };
+		ED6C89AF23B339BC00D217EA /* img_home_background_n.png in Resources */ = {isa = PBXBuildFile; fileRef = ED6C89AE23B339BC00D217EA /* img_home_background_n.png */; };
 		EDBC100823B1F835006A39B1 /* SlideMenuItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBC100723B1F835006A39B1 /* SlideMenuItemCell.swift */; };
+		EDBCD00823B27C590035A503 /* FunctionItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBCD00623B27C590035A503 /* FunctionItemCell.swift */; };
+		EDBCD00923B27C590035A503 /* FunctionItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDBCD00723B27C590035A503 /* FunctionItemCell.xib */; };
+		EDBCD00B23B27E1F0035A503 /* FunctionCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBCD00A23B27E1F0035A503 /* FunctionCollectionView.swift */; };
+		EDBCD00D23B281870035A503 /* FunctionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBCD00C23B281870035A503 /* FunctionItem.swift */; };
 		EDED332523ACB1BF005F658D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDED332423ACB1BF005F658D /* MainViewController.swift */; };
 		EDED332B23ACB7F8005F658D /* SlideMenuNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDED332A23ACB7F8005F658D /* SlideMenuNavViewController.swift */; };
 		EDED332D23ACBD97005F658D /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDED332C23ACBD97005F658D /* Menu.storyboard */; };
@@ -37,7 +42,12 @@
 		ED69B83C23B1294700488740 /* hilife_app_splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hilife_app_splash.png; sourceTree = "<group>"; };
 		ED69B84023B1A3D500488740 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		ED69B84223B1A46F00488740 /* LeftMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenuItem.swift; sourceTree = "<group>"; };
+		ED6C89AE23B339BC00D217EA /* img_home_background_n.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_home_background_n.png; sourceTree = "<group>"; };
 		EDBC100723B1F835006A39B1 /* SlideMenuItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideMenuItemCell.swift; sourceTree = "<group>"; };
+		EDBCD00623B27C590035A503 /* FunctionItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionItemCell.swift; sourceTree = "<group>"; };
+		EDBCD00723B27C590035A503 /* FunctionItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FunctionItemCell.xib; sourceTree = "<group>"; };
+		EDBCD00A23B27E1F0035A503 /* FunctionCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionCollectionView.swift; sourceTree = "<group>"; };
+		EDBCD00C23B281870035A503 /* FunctionItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionItem.swift; sourceTree = "<group>"; };
 		EDED332423ACB1BF005F658D /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		EDED332A23ACB7F8005F658D /* SlideMenuNavViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideMenuNavViewController.swift; sourceTree = "<group>"; };
 		EDED332C23ACBD97005F658D /* Menu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
@@ -96,8 +106,8 @@
 		ED1E07F123AC9656003E53D8 /* AppTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				EDBC100623B1DFDB006A39B1 /* component */,
 				ED69B83B23B1293A00488740 /* images */,
+				EDBC100623B1DFDB006A39B1 /* component */,
 				ED69B83F23B1A3C900488740 /* utils */,
 				ED69B83E23B1A15300488740 /* model */,
 				EDED332623ACB242005F658D /* viewcontroller */,
@@ -114,6 +124,7 @@
 		ED69B83B23B1293A00488740 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				ED6C89AE23B339BC00D217EA /* img_home_background_n.png */,
 				ED69B83C23B1294700488740 /* hilife_app_splash.png */,
 			);
 			path = images;
@@ -123,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				ED69B84223B1A46F00488740 /* LeftMenuItem.swift */,
+				EDBCD00C23B281870035A503 /* FunctionItem.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -140,6 +152,9 @@
 			children = (
 				EDBC100723B1F835006A39B1 /* SlideMenuItemCell.swift */,
 				EDED333123ACD574005F658D /* SlideMenuItemCell.xib */,
+				EDBCD00623B27C590035A503 /* FunctionItemCell.swift */,
+				EDBCD00723B27C590035A503 /* FunctionItemCell.xib */,
+				EDBCD00A23B27E1F0035A503 /* FunctionCollectionView.swift */,
 			);
 			path = component;
 			sourceTree = "<group>";
@@ -223,10 +238,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDBCD00923B27C590035A503 /* FunctionItemCell.xib in Resources */,
 				ED1E07FF23AC965A003E53D8 /* LaunchScreen.storyboard in Resources */,
 				ED69B83D23B1294700488740 /* hilife_app_splash.png in Resources */,
 				ED1E07FC23AC965A003E53D8 /* Assets.xcassets in Resources */,
 				EDED333323ACD574005F658D /* SlideMenuItemCell.xib in Resources */,
+				ED6C89AF23B339BC00D217EA /* img_home_background_n.png in Resources */,
 				ED1E07FA23AC9656003E53D8 /* Main.storyboard in Resources */,
 				EDED332D23ACBD97005F658D /* Menu.storyboard in Resources */,
 			);
@@ -284,10 +301,13 @@
 				EDED332F23ACC79A005F658D /* SlideMenuViewController.swift in Sources */,
 				EDED332523ACB1BF005F658D /* MainViewController.swift in Sources */,
 				ED1E07F323AC9656003E53D8 /* AppDelegate.swift in Sources */,
+				EDBCD00823B27C590035A503 /* FunctionItemCell.swift in Sources */,
 				EDED332B23ACB7F8005F658D /* SlideMenuNavViewController.swift in Sources */,
 				ED69B84323B1A46F00488740 /* LeftMenuItem.swift in Sources */,
 				ED69B84123B1A3D500488740 /* Constants.swift in Sources */,
 				ED1E07F523AC9656003E53D8 /* SceneDelegate.swift in Sources */,
+				EDBCD00D23B281870035A503 /* FunctionItem.swift in Sources */,
+				EDBCD00B23B27E1F0035A503 /* FunctionCollectionView.swift in Sources */,
 				EDBC100823B1F835006A39B1 /* SlideMenuItemCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
