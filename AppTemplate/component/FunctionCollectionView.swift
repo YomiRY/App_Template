@@ -12,18 +12,12 @@ import Kingfisher
 class FunctionCollectionView: UICollectionView, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     private static let FUNCTION_ITEM_NIB_NAME = "FunctionItemCell"
-    private static let CELL_COUNT_IN_ROW:Int = 4
     private static let CELL_ID = "function_cell"
     
     var mFunctionItemList:Array<FunctionItem>?
-    // FIXME: 做到此
-//    var listener:IFunctionEventListener?
-    
-//    protocol IFunctionListEventListener {
-//        func onClick(parameters) -> <#return type#> {
-//        function body
-//        }
-//    }
+    var listener:IFuncListEventListener?
+    var cellCountInCol:CGFloat = 1
+    var cellCountInRow:CGFloat = 1
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -40,6 +34,10 @@ class FunctionCollectionView: UICollectionView, UICollectionViewDataSource, UICo
         self.delegate = self
         
         self.register(UINib(nibName: FunctionCollectionView.FUNCTION_ITEM_NIB_NAME, bundle: nil), forCellWithReuseIdentifier: FunctionCollectionView.CELL_ID)
+    }
+    
+    func setListener(listener:IFuncListEventListener) {
+        self.listener = listener
     }
 
     // MARK:- UICollectionViewDataSource
@@ -63,11 +61,15 @@ class FunctionCollectionView: UICollectionView, UICollectionViewDataSource, UICo
     
     // MARK:- UICollectionViewDelegate
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        // FIXME: Not Implemented
+        guard let listener = self.listener, let funcItem = mFunctionItemList?[indexPath.row] else {
+            return
+        }
+        
+        listener.onClick(funcItem: funcItem)
     }
     
     // MARK:- UICollectionViewDelegateFlowLayout
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: (collectionView.frame.size.width / 4), height: (collectionView.frame.size.height / 2))
+        return CGSize(width: (collectionView.frame.size.width / self.cellCountInRow), height: (collectionView.frame.size.height / self.cellCountInCol))
     }
 }

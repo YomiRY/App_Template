@@ -12,16 +12,18 @@ import SideMenu
 import FSPagerView
 import Kingfisher
 
-class MainViewController:UIViewController, FSPagerViewDataSource, FSPagerViewDelegate {
+class MainViewController:UIViewController, FSPagerViewDataSource, FSPagerViewDelegate, IFuncListEventListener {
     
     private static let BANNER_CELL_ID = "cell"
     
     @IBOutlet weak var mBiMemberCard: UIBarButtonItem!
     @IBOutlet weak var mBiSlideMenuBtn: UIBarButtonItem!
     @IBOutlet weak var mNavBar: UINavigationBar!
-    @IBOutlet weak var mFpPager: FSPagerView!
+    @IBOutlet weak var mFpBanner: FSPagerView!
     @IBOutlet weak var mPageIndicator: FSPageControl!
-    @IBOutlet weak var mCvMainFuncList: FunctionCollectionView!
+    @IBOutlet weak var mCvFuncList: FunctionCollectionView!
+    @IBOutlet weak var mClMainFuncListTopToBannerBottom: NSLayoutConstraint!
+    private var mClMainFuncListTopToNavBottom:NSLayoutConstraint?
     
     private var mLeftMenuItemList:Array<LeftMenuItem>?
     private var mIsDispInMainPage:Bool = true
@@ -40,39 +42,17 @@ class MainViewController:UIViewController, FSPagerViewDataSource, FSPagerViewDel
     override func viewDidAppear(_ animated: Bool) {}
     
     // MARK:- Initialization
-    func initData() {
-        self.mLeftMenuItemList = Array<LeftMenuItem>()
-        
-        // Initialize  main item and sub item of left slide menu
-        for item in Constants.LEFT_MENU_ITEMS {
-            self.mLeftMenuItemList?.append(item)
-            
-            if item.isMainItem, let subItems = item.subItems {
-                for subItem in subItems {
-                    self.mLeftMenuItemList?.append(subItem)
-                }
-            }
-        }
-        
-        self.mCvMainFuncList.mFunctionItemList = Array<FunctionItem>()
-        if(mIsDispInMainPage) {
-            // 只取需要顯示在主頁面的
-            self.mCvMainFuncList.mFunctionItemList?.append(contentsOf: Constants.FUNCTION_ITMES)
-            self.mCvMainFuncList.mFunctionItemList?.append(FunctionItem(index: 6, type: "NATIVE", isInMainPage: true, text: "更多功能", url:"https://firebasestorage.googleapis.com/v0/b/nodejs-test-abeae.appspot.com/o/btn_home_all_n.png?alt=media&token=b93f48e2-5230-4830-9b17-57b1b1169469"))
-        }
-        self.mCvMainFuncList.reloadData()
-    }
-    
     func initView() {
-        mNavBar.barTintColor = UIColor.white
+        self.mNavBar.barTintColor = UIColor.white
+        self.mCvFuncList.listener = self
         
         initBannerPager()
         initSlideMenu()
     }
     
     func initBannerPager() {
-        mFpPager.isInfinite = true
-        mFpPager.automaticSlidingInterval = 2
+        mFpBanner.isInfinite = true
+        mFpBanner.automaticSlidingInterval = 2
         mPageIndicator.numberOfPages = Constants.PAGER_IMAGE_URL.count
         mPageIndicator.contentHorizontalAlignment = .center
         //mPageIndicator.hidesForSinglePage = true
@@ -84,7 +64,7 @@ class MainViewController:UIViewController, FSPagerViewDataSource, FSPagerViewDel
         mPageIndicator.setPath(UIBezierPath(ovalIn: CGRect(x: 0, y: 0, width: 10, height: 10)), for: .normal)
         mPageIndicator.itemSpacing = 20
         
-        self.mFpPager.register(FSPagerViewCell.self, forCellWithReuseIdentifier: MainViewController.BANNER_CELL_ID)
+        self.mFpBanner.register(FSPagerViewCell.self, forCellWithReuseIdentifier: MainViewController.BANNER_CELL_ID)
     }
     
     func initSlideMenu() {
@@ -104,12 +84,74 @@ class MainViewController:UIViewController, FSPagerViewDataSource, FSPagerViewDel
         // (Optional) Prevent status bar area from turning black when menu appears:
         SideMenuManager.default.leftMenuNavigationController?.statusBarEndAlpha = 0
         SideMenuManager.default.leftMenuNavigationController?.navigationBar.isHidden = true
-        SideMenuManager.default.leftMenuNavigationController?.menuWidth = UIScreen.main.bounds.width * 0.66
+        SideMenuManager.default.leftMenuNavigationController?.menuWidth = UIScreen.main.bounds.width * Constants.SLIDE_MENU_WIDTH
         // Setup gestures: the left and/or right menus must be set up (above) for these to work.
         // Note that these continue to work on the Navigation Controller independent of t
         // he view controller it displays!
         // SideMenuManager.default.addPanGestureToPresent(toView:  self.mNavBar)
         // SideMenuManager.default.addScreenEdgePanGesturesToPresent(toView: self.view)
+    }
+    
+    func initData() {
+        // 側選單資料初始化
+        self.mLeftMenuItemList = Array<LeftMenuItem>()
+        // Initialize  main item and sub item of left slide menu
+        for item in Constants.LEFT_MENU_ITEMS {
+            self.mLeftMenuItemList?.append(item)
+            
+            if item.isMainItem, let subItems = item.subItems {
+                for subItem in subItems {
+                    self.mLeftMenuItemList?.append(subItem)
+                }
+            }
+        }
+        
+        // 功能列表初始化
+        self.mCvFuncList.mFunctionItemList = Array<FunctionItem>()
+        self.mCvFuncList.cellCountInRow = Constants.CELL_COUNT_IN_ROW
+        for item in Constants.FUNCTION_ITMES {
+            if (self.mIsDispInMainPage && item.isInMainPage!) || !self.mIsDispInMainPage {
+                self.mCvFuncList.mFunctionItemList?.append(item)
+            }
+        }
+        if(mIsDispInMainPage) {
+            //主頁可視範圍 2 Column
+            self.mCvFuncList.cellCountInCol = 2
+            // 只取需要顯示在主頁面的
+            self.mCvFuncList.mFunctionItemList?.append(FunctionItem(index: 5, type: Constants.ItemType.NATIVE.rawValue, isInMainPage: true, text: "更多功能", url:"https://firebasestorage.googleapis.com/v0/b/nodejs-test-abeae.appspot.com/o/btn_home_all_n.png?alt=media&token=b93f48e2-5230-4830-9b17-57b1b1169469"))
+        } else {
+            //主頁可視範圍 6 Column
+            self.mCvFuncList.cellCountInCol = 6
+        }
+        self.mCvFuncList.reloadData()
+        self.mCvFuncList.updateConstraints()
+    }
+    
+    // MARK:- IFuncListEventListener
+    func onClick(funcItem: FunctionItem) {
+        if (funcItem.isInMainPage ?? false) && (funcItem.index == 5) {
+            // 點選更多功能
+            //調整主頁面Function List
+            self.mIsDispInMainPage = false
+            if self.mClMainFuncListTopToNavBottom == nil {
+                self.mClMainFuncListTopToNavBottom = self.mCvFuncList.topAnchor.constraint(equalTo: self.mNavBar.bottomAnchor)
+            }
+            self.view.removeConstraint(self.mClMainFuncListTopToBannerBottom)
+            self.view.addConstraint(self.mClMainFuncListTopToNavBottom!)
+        } else {
+            // 點選其他功能
+            self.mIsDispInMainPage = true
+            if self.mClMainFuncListTopToBannerBottom == nil {
+                self.mClMainFuncListTopToBannerBottom = self.mCvFuncList.topAnchor.constraint(equalTo: self.mFpBanner.bottomAnchor)
+            }
+            //調整主頁面Function List
+            self.view.addConstraint(self.mClMainFuncListTopToBannerBottom)
+            self.view.removeConstraint(self.mClMainFuncListTopToNavBottom!)
+        }
+        self.view.updateConstraints()
+        // 重新刷新功能列表
+        initData()
+        print("\(#function)")
     }
     
     // MARK:- SlideMenu

@@ -24,8 +24,11 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z4f-sN-EJX" userLabel="FunctionName">
-                        <rect key="frame" x="5" y="150" width="130" height="60"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                        <rect key="frame" x="5" y="150" width="130" height="23"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="23" id="yhC-Zr-CfZ"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" red="0.52941176470588236" green="0.57192567737711519" blue="0.57461262758528064" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -38,7 +41,6 @@
                 <constraint firstItem="Est-c6-rMi" firstAttribute="leading" secondItem="z4f-sN-EJX" secondAttribute="leading" constant="-5" id="aLz-cL-WBC"/>
                 <constraint firstItem="Est-c6-rMi" firstAttribute="trailing" secondItem="z4f-sN-EJX" secondAttribute="trailing" constant="5" id="cEE-qh-4gd"/>
                 <constraint firstItem="z4f-sN-EJX" firstAttribute="top" secondItem="Est-c6-rMi" secondAttribute="bottom" id="gJ5-Ta-Qh7"/>
-                <constraint firstItem="ZTg-uK-7eu" firstAttribute="bottom" secondItem="z4f-sN-EJX" secondAttribute="bottom" id="ytM-Ki-d80"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="140" height="196"/>
@@ -46,7 +48,7 @@
                 <outlet property="mIvIcon" destination="Est-c6-rMi" id="FDv-EM-IkV"/>
                 <outlet property="mLbText" destination="z4f-sN-EJX" id="UtE-ji-Gzg"/>
             </connections>
-            <point key="canvasLocation" x="40.579710144927539" y="261.83035714285711"/>
+            <point key="canvasLocation" x="40.579710144927539" y="261.16071428571428"/>
         </collectionViewCell>
     </objects>
 </document>
