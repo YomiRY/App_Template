@@ -13,6 +13,8 @@
 		ED1E07FA23AC9656003E53D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED1E07F823AC9656003E53D8 /* Main.storyboard */; };
 		ED1E07FC23AC965A003E53D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED1E07FB23AC965A003E53D8 /* Assets.xcassets */; };
 		ED1E07FF23AC965A003E53D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED1E07FD23AC965A003E53D8 /* LaunchScreen.storyboard */; };
+		ED5D2A3C23B52B4E00AA7CE7 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5D2A3B23B52B4E00AA7CE7 /* WebViewController.swift */; };
+		ED5D2A3E23B5977100AA7CE7 /* ApiUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5D2A3D23B5977100AA7CE7 /* ApiUtils.swift */; };
 		ED69B83D23B1294700488740 /* hilife_app_splash.png in Resources */ = {isa = PBXBuildFile; fileRef = ED69B83C23B1294700488740 /* hilife_app_splash.png */; };
 		ED69B84123B1A3D500488740 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED69B84023B1A3D500488740 /* Constants.swift */; };
 		ED69B84323B1A46F00488740 /* LeftMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED69B84223B1A46F00488740 /* LeftMenuItem.swift */; };
@@ -23,6 +25,9 @@
 		EDBCD00B23B27E1F0035A503 /* FunctionCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBCD00A23B27E1F0035A503 /* FunctionCollectionView.swift */; };
 		EDBCD00D23B281870035A503 /* FunctionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBCD00C23B281870035A503 /* FunctionItem.swift */; };
 		EDDBFD9123B44B5D00AFBD1D /* IFuncListEventListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDBFD9023B44B5D00AFBD1D /* IFuncListEventListener.swift */; };
+		EDDBFD9723B4A79600AFBD1D /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDBFD9623B4A79600AFBD1D /* ApiService.swift */; };
+		EDDBFD9B23B4A9D600AFBD1D /* ApiServiceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDBFD9A23B4A9D600AFBD1D /* ApiServiceExtension.swift */; };
+		EDE7371F240E511C00F2E367 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EDE7371E240E511C00F2E367 /* GoogleService-Info.plist */; };
 		EDED332523ACB1BF005F658D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDED332423ACB1BF005F658D /* MainViewController.swift */; };
 		EDED332B23ACB7F8005F658D /* SlideMenuNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDED332A23ACB7F8005F658D /* SlideMenuNavViewController.swift */; };
 		EDED332D23ACBD97005F658D /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDED332C23ACBD97005F658D /* Menu.storyboard */; };
@@ -40,6 +45,8 @@
 		ED1E07FB23AC965A003E53D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ED1E07FE23AC965A003E53D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED1E080023AC965A003E53D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED5D2A3B23B52B4E00AA7CE7 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		ED5D2A3D23B5977100AA7CE7 /* ApiUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiUtils.swift; sourceTree = "<group>"; };
 		ED69B83C23B1294700488740 /* hilife_app_splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hilife_app_splash.png; sourceTree = "<group>"; };
 		ED69B84023B1A3D500488740 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		ED69B84223B1A46F00488740 /* LeftMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenuItem.swift; sourceTree = "<group>"; };
@@ -50,11 +57,15 @@
 		EDBCD00A23B27E1F0035A503 /* FunctionCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionCollectionView.swift; sourceTree = "<group>"; };
 		EDBCD00C23B281870035A503 /* FunctionItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionItem.swift; sourceTree = "<group>"; };
 		EDDBFD9023B44B5D00AFBD1D /* IFuncListEventListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFuncListEventListener.swift; sourceTree = "<group>"; };
+		EDDBFD9623B4A79600AFBD1D /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
+		EDDBFD9A23B4A9D600AFBD1D /* ApiServiceExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiServiceExtension.swift; sourceTree = "<group>"; };
+		EDE7371E240E511C00F2E367 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EDED332423ACB1BF005F658D /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		EDED332A23ACB7F8005F658D /* SlideMenuNavViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideMenuNavViewController.swift; sourceTree = "<group>"; };
 		EDED332C23ACBD97005F658D /* Menu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
 		EDED332E23ACC79A005F658D /* SlideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideMenuViewController.swift; sourceTree = "<group>"; };
 		EDED333123ACD574005F658D /* SlideMenuItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SlideMenuItemCell.xib; sourceTree = "<group>"; };
+		EDF7FA03240582320056F5B4 /* AppTemplateDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AppTemplateDebug.entitlements; sourceTree = "<group>"; };
 		F7F36DF5611F37A5E8D15A5D /* Pods-AppTemplate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppTemplate.debug.xcconfig"; path = "Target Support Files/Pods-AppTemplate/Pods-AppTemplate.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -108,6 +119,8 @@
 		ED1E07F123AC9656003E53D8 /* AppTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				EDDBFD9523B4A77D00AFBD1D /* api */,
+				EDDBFD9923B4A98E00AFBD1D /* extensions */,
 				EDDBFD8E23B44B1300AFBD1D /* protocol */,
 				ED69B83B23B1293A00488740 /* images */,
 				EDBC100623B1DFDB006A39B1 /* component */,
@@ -117,6 +130,7 @@
 				ED1E07F223AC9656003E53D8 /* AppDelegate.swift */,
 				ED1E07F423AC9656003E53D8 /* SceneDelegate.swift */,
 				ED1E07F823AC9656003E53D8 /* Main.storyboard */,
+				EDE7371E240E511C00F2E367 /* GoogleService-Info.plist */,
 				ED1E07FB23AC965A003E53D8 /* Assets.xcassets */,
 				ED1E07FD23AC965A003E53D8 /* LaunchScreen.storyboard */,
 				ED1E080023AC965A003E53D8 /* Info.plist */,
@@ -136,6 +150,7 @@
 		ED69B83E23B1A15300488740 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				EDF7FA03240582320056F5B4 /* AppTemplateDebug.entitlements */,
 				ED69B84223B1A46F00488740 /* LeftMenuItem.swift */,
 				EDBCD00C23B281870035A503 /* FunctionItem.swift */,
 			);
@@ -170,11 +185,29 @@
 			path = protocol;
 			sourceTree = "<group>";
 		};
+		EDDBFD9523B4A77D00AFBD1D /* api */ = {
+			isa = PBXGroup;
+			children = (
+				EDDBFD9623B4A79600AFBD1D /* ApiService.swift */,
+				ED5D2A3D23B5977100AA7CE7 /* ApiUtils.swift */,
+			);
+			path = api;
+			sourceTree = "<group>";
+		};
+		EDDBFD9923B4A98E00AFBD1D /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EDDBFD9A23B4A9D600AFBD1D /* ApiServiceExtension.swift */,
+			);
+			path = extensions;
+			sourceTree = "<group>";
+		};
 		EDED332623ACB242005F658D /* viewcontroller */ = {
 			isa = PBXGroup;
 			children = (
 				EDED332723ACB788005F658D /* Menu */,
 				EDED332423ACB1BF005F658D /* MainViewController.swift */,
+				ED5D2A3B23B52B4E00AA7CE7 /* WebViewController.swift */,
 			);
 			path = viewcontroller;
 			sourceTree = "<group>";
@@ -251,6 +284,7 @@
 			files = (
 				EDBCD00923B27C590035A503 /* FunctionItemCell.xib in Resources */,
 				ED1E07FF23AC965A003E53D8 /* LaunchScreen.storyboard in Resources */,
+				EDE7371F240E511C00F2E367 /* GoogleService-Info.plist in Resources */,
 				ED69B83D23B1294700488740 /* hilife_app_splash.png in Resources */,
 				ED1E07FC23AC965A003E53D8 /* Assets.xcassets in Resources */,
 				EDED333323ACD574005F658D /* SlideMenuItemCell.xib in Resources */,
@@ -313,13 +347,17 @@
 				EDED332F23ACC79A005F658D /* SlideMenuViewController.swift in Sources */,
 				EDED332523ACB1BF005F658D /* MainViewController.swift in Sources */,
 				ED1E07F323AC9656003E53D8 /* AppDelegate.swift in Sources */,
+				ED5D2A3E23B5977100AA7CE7 /* ApiUtils.swift in Sources */,
 				EDBCD00823B27C590035A503 /* FunctionItemCell.swift in Sources */,
 				EDED332B23ACB7F8005F658D /* SlideMenuNavViewController.swift in Sources */,
+				EDDBFD9B23B4A9D600AFBD1D /* ApiServiceExtension.swift in Sources */,
 				ED69B84323B1A46F00488740 /* LeftMenuItem.swift in Sources */,
+				EDDBFD9723B4A79600AFBD1D /* ApiService.swift in Sources */,
 				ED69B84123B1A3D500488740 /* Constants.swift in Sources */,
 				ED1E07F523AC9656003E53D8 /* SceneDelegate.swift in Sources */,
 				EDBCD00D23B281870035A503 /* FunctionItem.swift in Sources */,
 				EDBCD00B23B27E1F0035A503 /* FunctionCollectionView.swift in Sources */,
+				ED5D2A3C23B52B4E00AA7CE7 /* WebViewController.swift in Sources */,
 				EDBC100823B1F835006A39B1 /* SlideMenuItemCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -465,7 +503,9 @@
 			baseConfigurationReference = F7F36DF5611F37A5E8D15A5D /* Pods-AppTemplate.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = AppTemplate/AppTemplateDebug.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = H2724L9BS5;
 				INFOPLIST_FILE = AppTemplate/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -473,8 +513,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ios.yomiios.test.AppTemplate;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ios.yomiios.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = TestProject_Dev_Provision_Profile;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -493,7 +534,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ios.yomiios.test.AppTemplate;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ios.yomiios.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
