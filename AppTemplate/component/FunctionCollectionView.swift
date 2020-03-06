@@ -1,11 +1,3 @@
-//
-//  FunctionCollectionView.swift
-//  AppTemplate
-//
-//  Created by yomi on 2019/12/25.
-//  Copyright © 2019 yomi. All rights reserved.
-//
-
 import UIKit
 import Kingfisher
 
@@ -36,10 +28,6 @@ class FunctionCollectionView: UICollectionView, UICollectionViewDataSource, UICo
         self.register(UINib(nibName: FunctionCollectionView.FUNCTION_ITEM_NIB_NAME, bundle: nil), forCellWithReuseIdentifier: FunctionCollectionView.CELL_ID)
     }
     
-    func setListener(listener:IFuncListEventListener) {
-        self.listener = listener
-    }
-
     // MARK:- UICollectionViewDataSource
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return mFunctionItemList?.count ?? 0

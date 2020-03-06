@@ -22,10 +22,10 @@
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLName</key>
-			<string>Hi-Life-Vip</string>
+			<string>com.ios.yomiios.test</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>HiLifeVip</string>
+				<string>com.ios.yomiios.test</string>
 			</array>
 		</dict>
 	</array>

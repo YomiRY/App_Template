@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OTJ-aP-psj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OTJ-aP-psj">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--MainViewController-->
+        <!--主頁-->
         <scene sceneID="42D-Sr-kr9">
             <objects>
-                <viewController id="OTJ-aP-psj" userLabel="MainViewController" customClass="MainViewController" customModule="AppTemplate" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="OTJ-aP-psj" userLabel="主頁" customClass="MainViewController" customModule="AppTemplate" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cAn-CF-xX5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -27,7 +27,7 @@
                                             </connections>
                                         </barButtonItem>
                                         <view key="titleView" contentMode="scaleToFill" id="0yE-XM-ZZh">
-                                            <rect key="frame" x="86" y="5.5" width="165" height="33"/>
+                                            <rect key="frame" x="124.5" y="5.5" width="165" height="33"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_nav_logo_n" translatesAutoresizingMaskIntoConstraints="NO" id="IxR-hG-Bm1" userLabel="LogoTitleImg">
@@ -105,15 +105,65 @@
                         <outlet property="mFpBanner" destination="Aee-z0-BSZ" id="fwy-39-XzO"/>
                         <outlet property="mNavBar" destination="hiC-5Y-VMN" id="U5N-vw-NYx"/>
                         <outlet property="mPageIndicator" destination="GYH-NL-zu8" id="rAT-aE-dQE"/>
+                        <segue destination="gv2-Uw-2iz" kind="presentation" identifier="show_product_detail" id="IXq-BR-QSn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eLo-dv-zLO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-152.17391304347828" y="-62.276785714285708"/>
         </scene>
+        <!--商品說明-->
+        <scene sceneID="W0i-OJ-3KQ">
+            <objects>
+                <viewController id="gv2-Uw-2iz" userLabel="商品說明" customClass="WebViewViewController" customModule="AppTemplate" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Rdd-99-J2C">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XJD-Tv-bHD">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                                <items>
+                                    <navigationItem title="商品說明" id="YJr-a4-Wka">
+                                        <barButtonItem key="leftBarButtonItem" image="home" id="OhX-xj-mkv"/>
+                                        <barButtonItem key="rightBarButtonItem" image="btn_nav_wallet_n" id="OCo-nQ-sbE"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Kz-Q0-5gs">
+                                <rect key="frame" x="0.0" y="56" width="414" height="752"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="7Kz-Q0-5gs" firstAttribute="leading" secondItem="fLA-1Y-pET" secondAttribute="leading" id="3Id-kh-HDJ"/>
+                            <constraint firstItem="fLA-1Y-pET" firstAttribute="bottom" secondItem="7Kz-Q0-5gs" secondAttribute="bottom" id="524-54-NAQ"/>
+                            <constraint firstItem="fLA-1Y-pET" firstAttribute="trailing" secondItem="XJD-Tv-bHD" secondAttribute="trailing" id="8GG-KB-suw"/>
+                            <constraint firstItem="7Kz-Q0-5gs" firstAttribute="top" secondItem="XJD-Tv-bHD" secondAttribute="bottom" id="IP0-RF-kj1"/>
+                            <constraint firstItem="XJD-Tv-bHD" firstAttribute="top" secondItem="fLA-1Y-pET" secondAttribute="top" id="U5S-rG-gPc"/>
+                            <constraint firstItem="XJD-Tv-bHD" firstAttribute="leading" secondItem="fLA-1Y-pET" secondAttribute="leading" id="VU1-T2-EVe"/>
+                            <constraint firstItem="fLA-1Y-pET" firstAttribute="trailing" secondItem="7Kz-Q0-5gs" secondAttribute="trailing" id="Zge-MR-GT8"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="fLA-1Y-pET"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="3UP-s4-ky6"/>
+                    <connections>
+                        <outlet property="webview" destination="7Kz-Q0-5gs" id="Upf-AD-zCq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iEQ-6p-SH8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="954" y="-61"/>
+        </scene>
     </scenes>
     <resources>
         <image name="btn_nav_menu_n" width="20" height="20"/>
+        <image name="btn_nav_wallet_n" width="20" height="20"/>
+        <image name="home" width="20" height="20"/>
         <image name="img_home_background_n.png" width="640" height="1136"/>
         <image name="img_nav_logo_n" width="94" height="28"/>
         <image name="img_nav_membercard_n" width="63" height="20"/>

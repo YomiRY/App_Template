@@ -31,7 +31,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:465626117956:ios:b1ac4179daf90154920911</string>
+	<string>1:465626117956:ios:4db8f654cf96416a920911</string>
 	<key>DATABASE_URL</key>
 	<string>https://nodejs-test-abeae.firebaseio.com</string>
 </dict>

@@ -8,5 +8,7 @@ target 'AppTemplate' do
   pod 'SideMenu', '~> 6.0'
   pod 'FSPagerView'
   pod 'Kingfisher', '~> 5.0'
+  pod 'Firebase/Analytics'
+  pod 'Firebase/DynamicLinks'
 
 end

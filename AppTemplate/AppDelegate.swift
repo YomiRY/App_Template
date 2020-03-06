@@ -8,14 +8,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        Thread.sleep(forTimeInterval: 3.0)
         // Use Firebase library to configure APIs
         FirebaseApp.configure()
         return true
     }
     
-    // MARK:- Deep Link
+    func applicationDidBecomeActive(_ application: UIApplication) {}
+    
+    // MARK:- Deep Link/URL Scheme
     @available(iOS 9.0, *)
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
         return application(app, open: url,
@@ -45,46 +45,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return handled
     }
     
-    //    func application(_ application: UIApplication, didUpdate userActivity: NSUserActivity) {
-    //        // 1
-    //        guard userActivity.activityType == NSUserActivityTypeBrowsingWeb,
-    //            let url = userActivity.webpageURL,
-    //            let components = URLComponents(url: url, resolvingAgainstBaseURL: true) else {
-    //                return
-    //        }
-    //
-    //        print("AppTemplate: universal link")
-    // 2
-    //        if let computer = ItemHandler.sharedInstance.items
-    //            .filter({ $0.path == components.path}).first {
-    //            presentDetailViewController(computer)
-    //            return
-    //        }
-    
-    // 3
-    //        if let webpageUrl = URL(string: "http://rw-universal-links-final.herokuapp.com") {
-    //            application.open(webpageUrl)
-    //        }
-    //    }
-    
-    //    func presentDetailViewController(_ computer: Computer) {
-    //        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-    //
-    //        guard
-    //            let detailVC = storyboard
-    //                .instantiateViewController(withIdentifier: "DetailController")
-    //                as? ComputerDetailController,
-    //            let navigationVC = storyboard
-    //                .instantiateViewController(withIdentifier: "NavigationController")
-    //                as? UINavigationController
-    //            else { return }
-    //
-    //        detailVC.item = computer
-    //        navigationVC.modalPresentationStyle = .formSheet
-    //        navigationVC.pushViewController(detailVC, animated: true)
-    //    }
-    
-    // MARK: UISceneSession Lifecycle
+    // MARK:- UISceneSession Lifecycle
     @available(iOS 13.0, *)
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
         // Called when a new scene session is being created.

@@ -1,11 +1,3 @@
-//
-//  MainViewController.swift
-//  AppTemplate
-//
-//  Created by yomi on 2019/12/20.
-//  Copyright © 2019 yomi. All rights reserved.
-//
-
 import Foundation
 import UIKit
 import SideMenu
@@ -15,6 +7,7 @@ import Kingfisher
 class MainViewController:UIViewController, FSPagerViewDataSource, FSPagerViewDelegate, IFuncListEventListener {
     
     private static let BANNER_CELL_ID = "cell"
+    private static let SHOW_PRODUCT_DETAIL_SEGUE_ID = "show_product_detail"
     
     @IBOutlet weak var mBiMemberCard: UIBarButtonItem!
     @IBOutlet weak var mBiSlideMenuBtn: UIBarButtonItem!
@@ -35,11 +28,14 @@ class MainViewController:UIViewController, FSPagerViewDataSource, FSPagerViewDel
         initView()
     }
     
-    override func viewDidLayoutSubviews() {
-        print(#function)
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == MainViewController.SHOW_PRODUCT_DETAIL_SEGUE_ID
+            , let targetVc = segue.destination as? WebViewViewController
+            , let urlStr = DataManager.shared.deeplinkUrl {
+            targetVc.urlStr = urlStr
+            DataManager.shared.deeplinkUrl = nil
+        }
     }
-    
-    override func viewDidAppear(_ animated: Bool) {}
     
     // MARK:- Initialization
     func initView() {
@@ -125,6 +121,9 @@ class MainViewController:UIViewController, FSPagerViewDataSource, FSPagerViewDel
         }
         self.mCvFuncList.reloadData()
         self.mCvFuncList.updateConstraints()
+        
+        // 監聽前景背景
+        NotificationCenter.default.addObserver(self, selector: #selector(forgroundObserver(notification:)), name:UIApplication.didBecomeActiveNotification, object: nil)
     }
     
     // MARK:- IFuncListEventListener
@@ -152,6 +151,17 @@ class MainViewController:UIViewController, FSPagerViewDataSource, FSPagerViewDel
         // 重新刷新功能列表
         initData()
         print("\(#function)")
+    }
+    
+    // MARK:- Forground Obser
+    @objc func forgroundObserver(notification:Notification) {
+        if DataManager.shared.deeplinkUrl == nil {
+            return
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+            self.performSegue(withIdentifier: MainViewController.SHOW_PRODUCT_DETAIL_SEGUE_ID, sender: nil)
+        }
     }
     
     // MARK:- SlideMenu
